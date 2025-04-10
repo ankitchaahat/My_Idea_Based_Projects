@@ -103,14 +103,14 @@ if torch.backends.cudnn.is_available():
 tokenizer_layer = TokenizationLayer()
 
 # Single Text Example
-text = "Bhai, hum Layer 1 ka Tokenization implement kar rahe hain!"
+text = "Hi, How are you doing?"
 tokens = tokenizer_layer.tokenize(text, max_length=10, add_special_tokens=True)  # Shape: [1, max_length]
 decoded_text = tokenizer_layer.detokenize(tokens)
 
 # Batch Text Example
 texts = [
-    "Bhai, hum Layer 1 ka Tokenization implement kar rahe hain!",
-    "Ye code ekdam perfect hai!"
+    "Hi, How are you doing?",
+    "This code is perfect!"
 ]
 batch_tokens = tokenizer_layer.tokenize(texts, max_length=10, add_special_tokens=True)  # Shape: [batch_size, max_length]
 decoded_texts = tokenizer_layer.detokenize(batch_tokens)
